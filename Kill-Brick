@@ -1,0 +1,10 @@
+local LavaBrick = script.Parent
+
+LavaBrick.Touched:Connect(function(hit)
+	local humanoid = hit.Parent:FindFirstChildOfClass("Humanoid")
+	if humanoid ~= nil then
+		if humanoid.Health > 0 then
+			humanoid:TakeDamage(humanoid.MaxHealth)
+		end
+	end
+end)
